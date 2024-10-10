@@ -1,0 +1,1995 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mini_ugv_asm">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0822009683879234 -0.00354592124515457 0.0195704968008771"
+        rpy="0 0 0" />
+      <mass
+        value="43.2527722253491" />
+      <inertia
+        ixx="0.636823963556697"
+        ixy="-0.000430801390176523"
+        ixz="0.0114672691633471"
+        iyy="1.44056741497044"
+        iyz="-0.000941262680704078"
+        izz="1.89219708661203" />  
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/base_link.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <link
+    name="Rear_Wheel_Left">
+    <inertial>
+      <origin
+        xyz="-4.4397E-07 0.0068282 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1.3168" />
+      <inertia
+        ixx="0.0023855"
+        ixy="-6.126E-09"
+        ixz="5.4928E-19"
+        iyy="0.0036694"
+        iyz="1.2599E-19"
+        izz="0.0023855" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/Rear_Wheel_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.08" radius="0.13"/>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/rear_wheel_collision.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="R_W_L"
+    type="fixed">
+    <origin
+      xyz="0.36016 -0.2664 0.009"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Rear_Wheel_Left" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="left_wheel" multiplier="1.0"/> -->
+  </joint>
+  <link
+    name="Rear_Wheel_Right">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 -0.0068282 -4.4397E-07"
+        rpy="0 0 0" />
+      <mass
+        value="1.3168" />
+      <inertia
+        ixx="0.0023855"
+        ixy="1.0123E-20"
+        ixz="3.3599E-19"
+        iyy="0.0036694"
+        iyz="6.126E-09"
+        izz="0.0023855" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/Rear_Wheel_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.08" radius="0.13"/>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/rear_wheel_collision.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="R_W_R"
+    type="fixed">
+    <origin
+      xyz="0.36016 0.2664 0.009"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Rear_Wheel_Right" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="right_wheel" multiplier="1.0"/> -->
+  </joint>
+  <link
+    name="Front_Wheel_Left">
+    <inertial>
+      <origin
+        xyz="8.3267E-17 0.0073593 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.4353" />
+      <inertia
+        ixx="0.004811"
+        ixy="-1.8817E-19"
+        ixz="1.0723E-18"
+        iyy="0.008112"
+        iyz="6.6574E-19"
+        izz="0.004811" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/Front_Wheel_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.09" radius="0.115"/>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/front_wheel_collision.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="left_wheel"
+    type="fixed">
+    <origin
+      xyz="-0.33984 -0.2664 -0.011"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Front_Wheel_Left" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="Front_Wheel_Right">
+    <inertial>
+      <origin
+        xyz="2.9143E-16 -0.0073593 -3.0531E-16"
+        rpy="0 0 0" />
+      <mass
+        value="1.4353" />
+      <inertia
+        ixx="0.004811"
+        ixy="-5.2818E-19"
+        ixz="1.5753E-18"
+        iyy="0.008112"
+        iyz="-4.2567E-19"
+        izz="0.004811" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/Front_Wheel_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.09" radius="0.115"/>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/front_wheel_collision.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="right_wheel"
+    type="fixed">
+    <origin
+      xyz="-0.33984 0.2664 -0.011"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Front_Wheel_Right" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="Flippers_Left">
+    <inertial>
+      <origin
+        xyz="1.7629E-05 -0.033132 5.3955E-05"
+        rpy="0 0 0" />
+      <mass
+        value="3.0642" />
+      <inertia
+        ixx="0.00058759"
+        ixy="-1.4902E-07"
+        ixz="-3.3147E-07"
+        iyy="0.0011056"
+        iyz="-4.5892E-07"
+        izz="0.00058668" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.14 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/Flippers_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 -0.22 0"
+        rpy="0 3.489066 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/flipper_collision.STL" />
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="Flipper"
+    type="fixed">
+    <origin
+      xyz="-0.33984 -0.2664 -0.011"
+      rpy="0 3.14 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Flippers_Left" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="Flippers_Right">
+    <inertial>
+      <origin
+        xyz="-1.7561E-05 0.069532 -5.3977E-05"
+        rpy="0 0 0" />
+      <mass
+        value="3.0642" />
+      <inertia
+        ixx="0.00058759"
+        ixy="-1.5012E-07"
+        ixz="-3.3147E-07"
+        iyy="0.0011056"
+        iyz="-4.5857E-07"
+        izz="0.00058668" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/Flippers_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0.349066 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/flipper_collision.STL" />
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="F_R"
+    type="fixed">
+    <origin
+      xyz="-0.33984 0.23 -0.011"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Flippers_Right" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="Flipper" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="L_Roller_1">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 -5.7202E-07 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <inertia
+        ixx="5.1859E-05"
+        ixy="-2.4838E-20"
+        ixz="-5.9519E-20"
+        iyy="1.3273E-05"
+        iyz="-4.657E-20"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_2.STL" />
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="lr1"
+    type="fixed">
+    <origin
+      xyz="0.23166 -0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Roller_1" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="left_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="L_Roller_2">
+    <inertial>
+      <origin
+        xyz="2.2204E-16 -5.7202E-07 -1.5266E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <!-- <inertia
+        ixx="5.1859E-05"
+        ixy="-1.2265E-19"
+        ixz="-5.1659E-21"
+        iyy="1.3273E-05"
+        iyz="3.963E-20"
+        izz="5.1859E-05" /> -->
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_2.STL" />
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="lr2"
+    type="continuous">
+    <origin
+      xyz="0.18316 -0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Roller_2" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics damping="2.1" friction="0.1"/>
+    <!-- <mimic joint="left_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="L_Roller_3">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 -5.7202E-07 8.3267E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <inertia
+        ixx="5.1859E-05"
+        ixy="8.14E-20"
+        ixz="1.0677E-19"
+        iyy="1.3273E-05"
+        iyz="-4.2563E-20"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="lr3"
+    type="fixed">
+    <origin
+      xyz="0.13466 -0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Roller_3" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="left_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="L_Roller_4">
+    <inertial>
+      <origin
+        xyz="0 -5.7202E-07 -8.3267E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <!-- <inertia
+        ixx="5.1859E-05"
+        ixy="-1.2838E-19"
+        ixz="4.0242E-20"
+        iyy="1.3273E-05"
+        iyz="2.0481E-20"
+        izz="5.1859E-05" /> -->
+      <inertia
+        ixx="0.0"   
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"   
+        iyz="0.0"
+        izz="5.1859E-05"
+    />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="lr4"
+    type="continuous">
+    <origin
+      xyz="0.086163 -0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Roller_4" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics damping="2.1" friction="0.1"/>
+    <!-- <mimic joint="left_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="L_Roller_5">
+    <inertial>
+      <origin
+        xyz="0 -5.7202E-07 -9.7145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <inertia
+        ixx="5.1859E-05"
+        ixy="-1.3783E-19"
+        ixz="4.9588E-20"
+        iyy="1.3273E-05"
+        iyz="6.7041E-21"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="lr5"
+    type="fixed">
+    <origin
+      xyz="0.037663 -0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Roller_5" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="left_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="L_Roller_6">
+    <inertial>
+      <origin
+        xyz="-5.5511E-17 -5.7202E-07 5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <!-- <inertia
+        ixx="5.1859E-05"
+        ixy="2.3549E-19"
+        ixz="4.437E-21"
+        iyy="1.3273E-05"
+        iyz="-4.3926E-20"
+        izz="5.1859E-05" /> -->
+      <inertia
+        ixx="0.0"   
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"   
+        iyz="0.0"
+        izz="5.1859E-05"
+    />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="lr6"
+    type="continuous">
+    <origin
+      xyz="-0.010837 -0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Roller_6" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics damping="2.1" friction="0.1"/>
+    <!-- <mimic joint="left_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="L_Roller_7">
+    <inertial>
+      <origin
+        xyz="1.6653E-16 -5.7202E-07 -6.9389E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <inertia
+        ixx="5.1859E-05"
+        ixy="1.1597E-19"
+        ixz="2.9154E-22"
+        iyy="1.3273E-05"
+        iyz="-4.8308E-21"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="lr7"
+    type="fixed">
+    <origin
+      xyz="-0.059337 -0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Roller_7" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="left_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="L_Roller_8">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 -5.7202E-07 -5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <!-- <inertia
+        ixx="5.1859E-05"
+        ixy="1.1597E-19"
+        ixz="2.9154E-22"
+        iyy="1.3273E-05"
+        iyz="-4.8308E-21"
+        izz="5.1859E-05" /> -->
+      <inertia
+        ixx="0.0"   
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"   
+        iyz="0.0"
+        izz="5.1859E-05"
+    />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="lr8"
+    type="continuous">
+    <origin
+      xyz="-0.10784 -0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Roller_8" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics damping="2.1" friction="0.1"/>
+    <!-- <mimic joint="left_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="L_Roller_9">
+    <inertial>
+      <origin
+        xyz="1.6653E-16 -5.7202E-07 -5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <inertia
+        ixx="5.1859E-05"
+        ixy="1.1597E-19"
+        ixz="2.9154E-22"
+        iyy="1.3273E-05"
+        iyz="-4.8308E-21"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_9.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="lr9"
+    type="fixed">
+    <origin
+      xyz="-0.15634 -0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Roller_9" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="left_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="L_Roller_10">
+    <inertial>
+      <origin
+        xyz="2.2204E-16 -5.7202E-07 -8.3267E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <!-- <inertia
+        ixx="5.1859E-05"
+        ixy="-6.4079E-20"
+        ixz="2.4481E-22"
+        iyy="1.3273E-05"
+        iyz="2.5428E-20"
+        izz="5.1859E-05" /> -->
+      <inertia
+        ixx="0.0"   
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"   
+        iyz="0.0"
+        izz="5.1859E-05"
+    />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/L_Roller_10.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="lr10"
+    type="continuous">
+    <origin
+      xyz="-0.20484 -0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Roller_10" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics damping="2.1" friction="0.1"/>
+    <!-- <mimic joint="left_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="R_Roller_1">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 -5.7202E-07 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <inertia
+        ixx="5.1859E-05"
+        ixy="9.2222E-20"
+        ixz="-5.9515E-20"
+        iyy="1.3273E-05"
+        iyz="-3.0992E-20"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/R_Roller_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="rr1"
+    type="fixed">
+    <origin
+      xyz="0.23166 0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Roller_1" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="right_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="R_Roller_2">
+    <inertial>
+      <origin
+        xyz="2.2204E-16 -5.7202E-07 -2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <!-- <inertia
+        ixx="5.1859E-05"
+        ixy="-4.3431E-20"
+        ixz="6.1368E-20"
+        iyy="1.3273E-05"
+        iyz="5.5602E-20"
+        izz="5.1859E-05" /> -->
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="5.1859E-05"
+        />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/R_Roller_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="rr2"
+    type="continuous">
+    <origin
+      xyz="0.18316 0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Roller_2" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics damping="2.1" friction="0.1"/>
+    <!-- <mimic joint="right_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="R_Roller_3">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 -5.7202E-07 5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <inertia
+        ixx="5.1859E-05"
+        ixy="-5.8286E-20"
+        ixz="9.3699E-20"
+        iyy="1.3273E-05"
+        iyz="-1.919E-20"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/R_Roller_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="rr3"
+    type="fixed">
+    <origin
+      xyz="0.13466 0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Roller_3" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="right_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="R_Roller_4">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 -5.7202E-07 -5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <!-- <inertia
+        ixx="5.1859E-05"
+        ixy="3.6738E-20"
+        ixz="6.5546E-20"
+        iyy="1.3273E-05"
+        iyz="-1.3118E-20"
+        izz="5.1859E-05" /> -->
+      <inertia
+        ixx="0.0"   
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"   
+        iyz="0.0"
+        izz="5.1859E-05"
+    />
+    </inertial>
+    
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/R_Roller_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="rr4"
+    type="continuous">
+    <origin
+      xyz="0.086163 0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Roller_4" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics damping="2.1" friction="0.1"/>
+    <!-- <mimic joint="right_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="R_Roller_5">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 -5.7202E-07 4.1633E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <inertia
+        ixx="5.1859E-05"
+        ixy="-1.5476E-19"
+        ixz="6.2815E-20"
+        iyy="1.3273E-05"
+        iyz="-4.1914E-20"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/R_Roller_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="rr5"
+    type="fixed">
+    <origin
+      xyz="0.037663 0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Roller_5" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="right_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="R_Roller_6">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 -5.7202E-07 -4.1633E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <!-- <inertia
+        ixx="5.1859E-05"
+        ixy="-8.063E-20"
+        ixz="5.6255E-20"
+        iyy="1.3273E-05"
+        iyz="7.8564E-20"
+        izz="5.1859E-05" /> -->
+      <inertia
+        ixx="0.0"   
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"   
+        iyz="0.0"
+        izz="5.1859E-05"
+    />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/R_Roller_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="rr6"
+    type="continuous">
+    <origin
+      xyz="-0.010837 0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Roller_6" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics damping="2.1" friction="0.1"/>
+    <!-- <mimic joint="right_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="R_Roller_7">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 -5.7202E-07 5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <inertia
+        ixx="5.1859E-05"
+        ixy="7.1052E-22"
+        ixz="5.1495E-20"
+        iyy="1.3273E-05"
+        iyz="-1.274E-20"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/R_Roller_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="rr7"
+    type="fixed">
+    <origin
+      xyz="-0.059337 0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Roller_7" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="right_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="R_Roller_8">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 -5.7202E-07 -4.1633E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <!-- <inertia
+        ixx="5.1859E-05"
+        ixy="4.5211E-20"
+        ixz="5.4335E-20"
+        iyy="1.3273E-05"
+        iyz="-6.8407E-21"
+        izz="5.1859E-05" /> -->
+      <inertia
+        ixx="0.0"   
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"   
+        iyz="0.0"
+        izz="5.1859E-05"
+    />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/R_Roller_8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="rr8"
+    type="continuous">
+    <origin
+      xyz="-0.10784 0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Roller_8" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics damping="2.1" friction="0.1"/>
+    <!-- <mimic joint="right_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="R_Roller_9">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 -5.7202E-07 5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <inertia
+        ixx="5.1859E-05"
+        ixy="1.5595E-19"
+        ixz="4.717E-20"
+        iyy="1.3273E-05"
+        iyz="-3.0154E-20"
+        izz="5.1859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/R_Roller_9.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+  </link>
+  <joint
+    name="rr9"
+    type="fixed">
+    <origin
+      xyz="-0.15634 0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Roller_9" />
+    <axis
+      xyz="0 -1 0" />
+    <!-- <mimic joint="right_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <link
+    name="R_Roller_10">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 -5.7202E-07 -1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.051837" />
+      <!-- <inertia
+        ixx="5.1859E-05"
+        ixy="7.554E-20"
+        ixz="-1.112E-20"
+        iyy="1.3273E-05"
+        iyz="2.9106E-20"
+        izz="5.1859E-05" /> -->
+      <inertia
+        ixx="0.0"   
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"   
+        iyz="0.0"
+        izz="5.1859E-05"
+    />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_ugv_asm/meshes/R_Roller_10.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder length="0.07" radius="0.04"/>
+      </geometry>
+      <!-- <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
+    </collision>
+  </link>
+  <joint
+    name="rr10"
+    type="continuous">
+    <origin
+      xyz="-0.20484 0.2575 -0.07925"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Roller_10" />
+    <axis
+      xyz="0 -1 0" />
+    <dynamics damping="2.1" friction="0.1"/>
+    <!-- <mimic joint="right_wheel" multiplier="-1.0"/> -->
+  </joint>
+  <gazebo>
+    <plugin filename="libgazebo_ros_diff_drive.so" name="front_drive_controller">
+    <ros>
+        <namespace>mini_ugv</namespace>
+        <argument>--ros-args --remap /cmd_vel:=cmd_vel</argument>
+        <argument>--ros-args --remap /odom:=odom</argument>
+    </ros>
+
+    <num_wheel_pairs>5</num_wheel_pairs>
+
+    <!-- <update_rate>100</update_rate> -->
+    <!-- <left_joint>left_wheel</left_joint>
+    <right_joint>right_wheel</right_joint>
+
+    <left_joint>R_W_L</left_joint>
+    <right_joint>R_W_R</right_joint> -->
+
+    <!-- <left_joint>lr1</left_joint>
+    <right_joint>rr1</right_joint> -->
+    
+    <left_joint>lr2</left_joint>
+    <right_joint>rr2</right_joint>
+
+    <!-- <left_joint>lr3</left_joint>
+    <right_joint>rr3</right_joint> -->
+
+    <left_joint>lr4</left_joint>
+    <right_joint>rr4</right_joint>
+
+    <!-- <left_joint>lr5</left_joint>
+    <right_joint>rr5</right_joint> -->
+
+    <left_joint>lr6</left_joint>
+    <right_joint>rr6</right_joint>
+
+    <!-- <left_joint>lr7</left_joint>
+    <right_joint>rr7</right_joint> -->
+
+    <left_joint>lr8</left_joint>
+    <right_joint>rr8</right_joint>
+
+    <!-- <left_joint>lr9</left_joint>
+    <right_joint>rr9</right_joint> -->
+
+    <left_joint>lr10</left_joint>
+    <right_joint>rr10</right_joint>
+    
+
+    <!-- <wheel_separation>0.5328</wheel_separation>
+    <wheel_separation>0.5328</wheel_separation> -->
+    <!-- <wheel_separation>0.5328</wheel_separation>
+    <wheel_separation>0.5328</wheel_separation>
+    <wheel_separation>0.5328</wheel_separation>
+    <wheel_separation>0.5328</wheel_separation>
+    <wheel_separation>0.5328</wheel_separation> -->
+    <wheel_separation>0.5328</wheel_separation>
+    <wheel_separation>0.5328</wheel_separation>
+    <wheel_separation>0.5328</wheel_separation>
+    <wheel_separation>0.5328</wheel_separation>
+    <wheel_separation>0.5328</wheel_separation>
+    
+    <!-- <wheel_diameter>0.23</wheel_diameter>
+    <wheel_diameter>0.26</wheel_diameter> -->
+    <!-- <wheel_diameter>0.08</wheel_diameter>
+    <wheel_diameter>0.08</wheel_diameter>
+    <wheel_diameter>0.08</wheel_diameter>
+    <wheel_diameter>0.08</wheel_diameter>
+    <wheel_diameter>0.08</wheel_diameter> -->
+    <wheel_diameter>0.08</wheel_diameter>
+    <wheel_diameter>0.08</wheel_diameter>
+    <wheel_diameter>0.08</wheel_diameter>
+    <wheel_diameter>0.08</wheel_diameter>
+    <wheel_diameter>0.08</wheel_diameter>
+
+
+    <max_wheel_acceleration>0.185</max_wheel_acceleration>
+    <max_wheel_torque>10000</max_wheel_torque>
+
+    <odometry_frame>odom</odometry_frame>
+    <robot_base_frame>base_link</robot_base_frame>
+
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>true</publish_odom_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+
+    <odometry_source>0</odometry_source>
+
+    </plugin>
+
+  </gazebo>
+</robot>
+
+<!-- 0.13 - r
+0.115 - f
+0.04 - ro -->
+
+      <!-- </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>50.0</mu2>
+          </ode>
+        </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface>
+    </collision> -->
+<!-- 
+  </friction>
+    <contact>
+      <ode>
+        <min_depth>0.3</min_depth>
+      </ode>
+    </contact>
+</surface> -->
